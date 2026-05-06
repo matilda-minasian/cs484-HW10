@@ -203,7 +203,7 @@ function clickTypeError() {
 function clickViolation() {
   'use strict';
   try {
-    undeclaredVariable = 10; // This will cause a ReferenceError in strict mode
+    undeclaredVariable = 10;
   } catch (error) {
     console.error('ReferenceError caught:', error);
   }
