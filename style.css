@@ -1,0 +1,216 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  background-color: #f5f4f0;
+  color: #1a1a1a;
+  padding: 2rem 1.5rem;
+}
+
+header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0ddd5;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+main {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+
+.pet-image-container {
+  flex: 0 0 auto;
+  background: #ffffff;
+  border: 1px solid #e0ddd5;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pet-image {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+
+.dashboard {
+  flex: 1;
+  min-width: 260px;
+}
+
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  background: #ffffff;
+  border: 1px solid #e0ddd5;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+.stat-card .label {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #888780;
+  margin-bottom: 4px;
+}
+
+.stat-card .value {
+  font-size: 20px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.stat-card .unit {
+  font-size: 11px;
+  color: #b4b2a9;
+  margin-top: 2px;
+}
+
+
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #b4b2a9;
+  margin-bottom: 8px;
+}
+
+
+
+.button-container {
+  margin-bottom: 1.5rem;
+}
+
+.button-container button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: 1px solid #d3d1c7;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-size: 14px;
+  font-family: helvetica, arial, sans-serif;
+  cursor: pointer;
+  transition: background 0.1s ease;
+  float: none;
+  width: auto;
+  text-align: left;
+}
+
+.button-container button:hover {
+  background: #f5f4f0;
+}
+
+/* Colored accents for action buttons */
+
+.button-container .treat-button    { border-color: #FAC775; }
+.button-container .play-button     { border-color: #9FE1CB; }
+.button-container .exercise-button { border-color: #B5D4F4; }
+.button-container .sleep-button    { border-color: #CECBF6; }
+
+/* Debug buttons */
+
+.button-container .info-button,
+.button-container .warning-button,
+.button-container .error-button,
+.button-container .table-button,
+.button-container .group-button,
+.button-container .custom-button,
+.button-container .button-404,
+.button-container .type-button,
+.button-container .violation-button {
+  background: #f5f4f0;
+  border-color: #d3d1c7;
+  color: #5f5e5a;
+  font-size: 12px;
+  font-family: "Courier New", Courier, monospace;
+  padding: 5px 10px;
+}
+
+.button-container .info-button:hover,
+.button-container .warning-button:hover,
+.button-container .error-button:hover,
+.button-container .table-button:hover,
+.button-container .group-button:hover,
+.button-container .custom-button:hover,
+.button-container .button-404:hover,
+.button-container .type-button:hover,
+.button-container .violation-button:hover {
+  background: #e8e7e0;
+}
+
+/* Pet message */
+
+.pet-message {
+  margin-top: 1rem;
+  font-size: 14px;
+  color: #5f5e5a;
+  border-left: 2px solid #d3d1c7;
+  padding-left: 0.75rem;
+  min-height: 1.5rem;
+}
+
+.pet-message p {
+  margin: 0;
+  padding: 2px 0;
+}
+
+/* Pet animations */
+
+.pet-eating {
+  transform: scale(1.08);
+}
+
+.pet-exercising {
+  animation: exerciseMove 0.3s infinite alternate;
+}
+
+@keyframes exerciseMove {
+  from { transform: translateX(-15px); }
+  to   { transform: translateX(0px); }
+}
+
+.pet-playing {
+  animation: playMove 0.3s infinite alternate;
+}
+
+@keyframes playMove {
+  from { transform: translateY(0px); }
+  to   { transform: translateY(-20px); }
+}
+
+.pet-sleeping {
+  opacity: 0.35;
+}
